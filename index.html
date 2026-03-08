@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do You Have What It Takes To Be Ethan's Girl?</title>
+<link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#0b0b0b;
+font-family:'LEMON MILK', sans-serif;
+color:#ff9ecb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:#ff2e93;
+padding:40px;
+border-radius:16px;
+width:420px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+h1{
+text-align:center;
+font-size:24px;
+color:#0b0b0b;
+margin-bottom:25px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+}
+
+input,select{
+margin-bottom:15px;
+padding:12px;
+border:none;
+border-radius:8px;
+font-family:'LEMON MILK', sans-serif;
+background:#ffb6da;
+color:#0b0b0b;
+}
+
+button{
+background:#7CFF8A;
+color:#0b0b0b;
+padding:14px;
+border:none;
+border-radius:10px;
+font-family:'LEMON MILK', sans-serif;
+font-size:14px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#result{
+margin-top:25px;
+text-align:center;
+font-size:16px;
+color:#0b0b0b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Do You Have What It Takes To Be Ethan's Girl?</h1>
+
+<form id="applicationForm">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="number" placeholder="Age" required>
+
+<select required>
+<option value="">Fortnite Skill Level</option>
+<option>Noob</option>
+<option>Decent</option>
+<option>Sweaty Tryhard</option>
+</select>
+
+<select required>
+<option value="">Loyalty Level</option>
+<option>Questionable</option>
+<option>Solid</option>
+<option>Elite Loyalty</option>
+</select>
+
+<select required>
+<option value="">Ethan starts shadowboxing at 2am. What do you do?</option>
+<option>Join the training</option>
+<option>Film it</option>
+<option>Pretend to sleep</option>
+</select>
+
+<button type="submit">APPLY</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+document.getElementById("applicationForm").addEventListener("submit", function(e){
+
+ e.preventDefault();
+
+ const outcomes=[
+ "ACCEPTED ✔ Welcome to Ethan's world.",
+ "UNDER REVIEW 👀 The council is debating.",
+ "REJECTED ✖ Skill issue detected.",
+ "ELITE APPLICANT ⭐ You might actually survive.",
+ "DISQUALIFIED 🚫 Aura not strong enough."
+ ];
+
+ const random=outcomes[Math.floor(Math.random()*outcomes.length)];
+
+ document.getElementById("result").innerText=random;
+
+});
+
+</script>
+
+</body>
+</html>
